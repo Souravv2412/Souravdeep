@@ -157,13 +157,13 @@
     </div>
     <div class="sbox" style="border-top:3px solid #8B5CF6;">
       <div class="slbl" style="color:#7C3AED;">Task and Objective</div>
-      <div class="stext">Design a unified financial data architecture in Excel that standardized invoice creation, automated all calculations, organized transaction history into a queryable data model, and produced a live executive dashboard that replaced the manual monthly report.</div>
+      <div class="stext">Design a unified financial data architecture in Excel that standardized invoice creation, automated all calculations, organized transaction history into a organized data model, and produced a live executive dashboard that replaced the manual monthly report.</div>
     </div>
   </div>
   <div class="cc">
     <div style="font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Action</div>
     <div style="font-size:20px;font-weight:700;margin-bottom:16px;">What I Built and How</div>
-    <div class="aitem"><div class="anum">1</div><div class="atext">Architected a Star Schema data model in Excel with a Master Transaction Log as the central Fact Table, capturing every invoice by Invoice ID, Vendor ID, Department Code, amount, tax, due date, and payment status.</div></div><div class="aitem"><div class="anum">2</div><div class="atext">Built four Dimension Tables: Vendor Directory, Department Cost Centers, Tax Rate Reference, and Payment Status Reference, each linked to the central log.</div></div><div class="aitem"><div class="anum">3</div><div class="atext">Created an invoice template with locked formula cells for subtotal, tax, and total calculations so no one could accidentally overwrite a calculation.</div></div><div class="aitem"><div class="anum">4</div><div class="atext">Applied conditional formatting to flag overdue invoices in red automatically and added a live Days Outstanding formula to every transaction row.</div></div><div class="aitem"><div class="anum">5</div><div class="atext">Built an executive dashboard with four pivot table views and three KPI cards showing total payables, overdue amount, and payment status breakdown.</div></div>
+    <div class="aitem"><div class="anum">1</div><div class="atext">Built a Star Schema data model in Excel with a Master Transaction Log as the central Fact Table, capturing every invoice by Invoice ID, Vendor ID, Department Code, amount, tax, due date, and payment status.</div></div><div class="aitem"><div class="anum">2</div><div class="atext">Built four Dimension Tables: Vendor Directory, Department Cost Centers, Tax Rate Reference, and Payment Status Reference, each linked to the central log.</div></div><div class="aitem"><div class="anum">3</div><div class="atext">Created an invoice template with locked formula cells for subtotal, tax, and total calculations so no one could accidentally overwrite a calculation.</div></div><div class="aitem"><div class="anum">4</div><div class="atext">Applied conditional formatting to flag overdue invoices in red automatically and added a live Days Outstanding formula to every transaction row.</div></div><div class="aitem"><div class="anum">5</div><div class="atext">Built an executive dashboard with four pivot table views and three KPI cards showing total payables, overdue amount, and payment status breakdown.</div></div>
   </div>
   <div class="df-wrap">
     <div class="df-hdr"><div class="df-dot"></div><div class="df-title">Process Diagram</div><div class="df-cap">Star Schema data model showing how the Master Transaction Log connects to all four Dimension Tables</div></div>
@@ -179,13 +179,7 @@
     <div style="font-size:20px;font-weight:700;margin-bottom:14px;">What Was Used</div>
     <div class="trow"><span class="ttag">Microsoft Excel</span><span class="ttag">Pivot Tables</span><span class="ttag">SUMIF and COUNTIF Formulas</span><span class="ttag">Conditional Formatting</span><span class="ttag">Data Validation</span><span class="ttag">Star Schema Design</span></div>
   </div>
-  <div class="cc">
-    <div style="font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Interview Ready</div>
-    <div style="font-size:20px;font-weight:700;margin-bottom:16px;">How to Talk About This Project</div>
-    <div class="ipgrid">
-      <div class="ipcard"><div class="iptitle">Error Prevention by Design</div><div class="iptext">"Rather than relying on people to calculate correctly, I built the prevention into the tool itself. Formula cells were locked so no one could overwrite a tax calculation. Dropdowns meant payment terms were always one of four approved values."</div></div>
-      <div class="ipcard"><div class="iptitle">Data That Drives Decisions</div><div class="iptext">"The dashboard was not just a report. Within 30 seconds of opening the file, a manager could see which vendors were overdue, which departments were over budget, and where the 60-day aging risk was concentrated."</div></div>
-    </div>
+  
   </div>
   </div>
 
@@ -224,7 +218,7 @@
 <tr><td style="font-weight:700;">Catering</td><td>$36,000</td><td>$24,360</td><td style="color:#DC2626;font-weight:700;">$11,640</td><td style="color:#DC2626;font-weight:700;">68%</td><td><span class="xl-badge xl-red">Review Vendor</span></td></tr>
 <tr><td style="font-weight:700;background:#ECFDF5;">TOTAL</td><td style="font-weight:700;">$150,500</td><td style="font-weight:700;">$94,465</td><td style="font-weight:700;color:#059669;">$56,035</td><td style="font-weight:700;">63%</td><td><span class="xl-badge xl-blue">On Pace</span></td></tr></table></div>
     <div class="xl-caption">All values use =SUMIF() from Fact Table. Admin adds one row per transaction. Dashboard refreshes automatically - no monthly copy-paste rebuild.</div>
-  </div><div class="biz-impact"><h4>Business Impact - Why This Matters to Employers</h4><div class="biz-row"><div class="biz-cell"><div class="biz-num">22%</div><div class="biz-lbl">less unplanned overspend after real-time variance alerts</div></div><div class="biz-cell"><div class="biz-num">1 page</div><div class="biz-lbl">management report auto-generated in under 60 seconds</div></div><div class="biz-cell"><div class="biz-num">3 days</div><div class="biz-lbl">earlier budget visibility per cycle - managers act before overspend compounds</div></div></div></div>
+  </div><div class="biz-impact"><h4>Results</h4><div class="biz-row"><div class="biz-cell"><div class="biz-num">22%</div><div class="biz-lbl">less unplanned overspend after real-time variance alerts</div></div><div class="biz-cell"><div class="biz-num">1 page</div><div class="biz-lbl">management report auto-generated in under 60 seconds</div></div><div class="biz-cell"><div class="biz-num">3 days</div><div class="biz-lbl">earlier budget visibility per cycle - managers act before overspend compounds</div></div></div></div>
   </div>
 
   <div class="pnav"><a href="project2.html" class="parrow">&#8592; Calendar System</a><a href="project4.html" class="parrow">Email Operations &#8594;</a></div>
@@ -238,9 +232,10 @@
     <div class="footer-links">
       <a href="../index.html">Home</a>
       <a href="../about.html">About</a>
-      <a href="../experience.html">Experience</a>
+      <a href="../experience.html">Experience &amp; Education</a>
       <a href="../projects.html">Projects</a>
       <a href="../involvement.html">Work & Involvement</a>
+      <a href="../skills.html">Skills</a>
       <a href="../contact.html">Contact</a>
     </div>
     <div class="footer-links">

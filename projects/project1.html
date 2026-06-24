@@ -157,16 +157,16 @@
     </div>
     <div class="sbox" style="border-top:3px solid #8B5CF6;">
       <div class="slbl" style="color:#7C3AED;">Task and Objective</div>
-      <div class="stext">Design and implement a zero-friction document governance system on Microsoft OneDrive. The goal was simple: any employee, on any day, should be able to find any document within 60 seconds without asking anyone for help.</div>
+      <div class="stext">Design and implement a clean document governance system on Microsoft OneDrive. The goal was simple: any employee, on any day, should be able to find any document within 60 seconds without asking anyone for help.</div>
     </div>
   </div>
   <div class="cc">
     <div style="font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Action</div>
     <div style="font-size:20px;font-weight:700;margin-bottom:16px;">What I Built and How</div>
-    <div class="aitem"><div class="anum">1</div><div class="atext">Designed a multi-tiered folder taxonomy using strict numerical prefixing (01_Operations, 02_Finance, 03_Client_Services) to prevent buried, hard-to-navigate hierarchies.</div></div><div class="aitem"><div class="anum">2</div><div class="atext">Established a mandatory file naming convention: YYYYMMDD_DocumentName_vX.X to eliminate version confusion at the file-system level.</div></div><div class="aitem"><div class="anum">3</div><div class="atext">Built a Star Schema architecture in Excel with a central Master Document Registry (Fact Table) tracking every file by Document ID, version, department owner, and compliance status.</div></div><div class="aitem"><div class="anum">4</div><div class="atext">Created three linked Dimension Tables: Access Permission Matrix, Regulatory Retention Schedule, and Department Code Directory.</div></div><div class="aitem"><div class="anum">5</div><div class="atext">Authored five Standard Operating Procedures covering the full document lifecycle: creation, version control, archiving, new-hire provisioning, and emergency retrieval.</div></div>
+    <div class="aitem"><div class="anum">1</div><div class="atext">Designed a folder structure using strict numerical prefixing (01_Operations, 02_Finance, 03_Client_Services) to prevent buried, hard-to-navigate hierarchies.</div></div><div class="aitem"><div class="anum">2</div><div class="atext">Established a mandatory file naming convention: YYYYMMDD_DocumentName_vX.X to eliminate version confusion at the file-system level.</div></div><div class="aitem"><div class="anum">3</div><div class="atext">Built a Star Schema architecture in Excel with a central Master Document Registry (Fact Table) tracking every file by Document ID, version, department owner, and compliance status.</div></div><div class="aitem"><div class="anum">4</div><div class="atext">Created three linked Dimension Tables: Access Permission Matrix, Regulatory Retention Schedule, and Department Code Directory.</div></div><div class="aitem"><div class="anum">5</div><div class="atext">Wrote five Standard Operating Procedures covering the full document lifecycle: creation, version control, archiving, new-hire provisioning, and emergency retrieval.</div></div>
   </div>
   <div class="df-wrap">
-    <div class="df-hdr"><div class="df-dot"></div><div class="df-title">Process Diagram</div><div class="df-cap">Folder taxonomy with role-based access permissions across all departments</div></div>
+    <div class="df-hdr"><div class="df-dot"></div><div class="df-title">Process Diagram</div><div class="df-cap">Folder structure with role-based access permissions across all departments</div></div>
     <iframe src="diagrams/Diagram_P1_Folder_Hierarchy.html" class="dframe" title="Project Diagram"></iframe>
   </div>
   <div class="rc">
@@ -179,13 +179,7 @@
     <div style="font-size:20px;font-weight:700;margin-bottom:14px;">What Was Used</div>
     <div class="trow"><span class="ttag">Microsoft OneDrive</span><span class="ttag">Microsoft Excel</span><span class="ttag">Microsoft Word</span><span class="ttag">Star Schema Design</span><span class="ttag">Data Validation</span><span class="ttag">SOP Writing</span></div>
   </div>
-  <div class="cc">
-    <div style="font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Interview Ready</div>
-    <div style="font-size:20px;font-weight:700;margin-bottom:16px;">How to Talk About This Project</div>
-    <div class="ipgrid">
-      <div class="ipcard"><div class="iptitle">Self-Service First</div><div class="iptext">"When I designed this system, the test I kept applying was: can a brand-new employee find a critical client file on their first day without stopping anyone to ask? Every naming convention and folder label was written with that person in mind."</div></div>
-      <div class="ipcard"><div class="iptitle">Data Logic, Not Just Filing</div><div class="iptext">"I treated the office filing structure like a relational database. The master document registry connected to compliance timelines and user-role tables. That turned a flat cloud drive into an audit-ready corporate asset."</div></div>
-    </div>
+  
   </div>
   </div>
 
@@ -225,7 +219,7 @@
 <tr><td class="xl-key">HR Records</td><td>3 years post-termination</td><td>Employment Standards Act</td><td>HR Secure Archive</td></tr>
 <tr><td class="xl-key">IT Security Policies</td><td>3 years</td><td>PIPEDA</td><td>Delete after review</td></tr></table></div>
     <div class="xl-caption">Formula: =EDATE(CreationDate, RetentionMonths) calculates exact deletion or archiving deadlines per document.</div>
-  </div><div class="biz-impact"><h4>Business Impact - Why This Matters to Employers</h4><div class="biz-row"><div class="biz-cell"><div class="biz-num">14 hrs/wk</div><div class="biz-lbl">document retrieval time eliminated across 48 staff</div></div><div class="biz-cell"><div class="biz-num">$4,200</div><div class="biz-lbl">contract auto-renewals prevented by expiry tracking</div></div><div class="biz-cell"><div class="biz-num">35%</div><div class="biz-lbl">faster new-hire onboarding via self-service SOP library</div></div></div></div>
+  </div><div class="biz-impact"><h4>Results</h4><div class="biz-row"><div class="biz-cell"><div class="biz-num">14 hrs/wk</div><div class="biz-lbl">document retrieval time eliminated across 48 staff</div></div><div class="biz-cell"><div class="biz-num">$4,200</div><div class="biz-lbl">contract auto-renewals prevented by expiry tracking</div></div><div class="biz-cell"><div class="biz-num">35%</div><div class="biz-lbl">faster new-hire onboarding via self-service SOP library</div></div></div></div>
   </div>
 
   <div class="pnav"><span></span><a href="project2.html" class="parrow">Calendar System &#8594;</a></div>
@@ -239,9 +233,10 @@
     <div class="footer-links">
       <a href="../index.html">Home</a>
       <a href="../about.html">About</a>
-      <a href="../experience.html">Experience</a>
+      <a href="../experience.html">Experience &amp; Education</a>
       <a href="../projects.html">Projects</a>
       <a href="../involvement.html">Work & Involvement</a>
+      <a href="../skills.html">Skills</a>
       <a href="../contact.html">Contact</a>
     </div>
     <div class="footer-links">
