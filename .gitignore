@@ -9,13 +9,13 @@ Other images/
 SRC_VP_STClair/
 
 # ── Stray root-level files (originals are in assets/deliverables/) ──
-Administrative_Portfolio_Case_Studies.docx
-Canva_Portfolio_Guide.docx
-Portfolio_SOP_OnePagers.docx
-Project1_Document_Registry_StarSchema.xlsx
-Project2_Calendar_System.xlsx
-Project3_Financial_Dashboard.xlsx
-Project4_Email_Templates.docx
+/Administrative_Portfolio_Case_Studies.docx
+/Canva_Portfolio_Guide.docx
+/Portfolio_SOP_OnePagers.docx
+/Project1_Document_Registry_StarSchema.xlsx
+/Project2_Calendar_System.xlsx
+/Project3_Financial_Dashboard.xlsx
+/Project4_Email_Templates.docx
 
 # ── Node (if ever used locally) ──
 node_modules/
