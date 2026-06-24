@@ -4,7 +4,7 @@
 
 **Office Administrator & Operations Professional**
 
-[![Live Site](https://img.shields.io/badge/Live%20Site-Visit%20Portfolio-2B5CE6?style=for-the-badge&logo=github)](https://github.com/souravdeepsingh)
+[![Live Site](https://img.shields.io/badge/Live%20Site-Visit%20Portfolio-2B5CE6?style=for-the-badge&logo=github)](https://souravv2412.github.io/Souravdeep)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-sourav2312-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/sourav2312/)
 [![Email](https://img.shields.io/badge/Email-singh.s.deep800%40gmail.com-EA4335?style=for-the-badge&logo=gmail)](mailto:singh.s.deep800@gmail.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-gray?style=for-the-badge)](LICENSE)
@@ -26,7 +26,7 @@ A fully static, hand-coded personal portfolio website showcasing four enterprise
 ## Live Demo
 
 > Deploy to GitHub Pages and replace this URL:
-> **[https://your-username.github.io/your-repo-name](https://your-username.github.io/your-repo-name)**
+> **[https://souravv2412.github.io/Souravdeep](https://souravv2412.github.io/Souravdeep)**
 
 ---
 
