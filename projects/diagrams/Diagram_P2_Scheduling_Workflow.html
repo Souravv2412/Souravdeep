@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Project 2 — Scheduling Workflow</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction:column;align-items:center;padding:30px}
+h1{color:#1F4E79;font-size:20px;margin-bottom:4px;text-align:center}
+p.sub{color:#595959;font-size:13px;margin-bottom:24px;text-align:center}
+.canvas{background:#fff;border-radius:12px;padding:32px 40px;box-shadow:0 4px 20px rgba(0,0,0,.12);width:860px}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0}
+.step{border-radius:8px;padding:13px 22px;font-size:13px;font-weight:bold;text-align:center;width:320px;position:relative}
+.start{background:#1F4E79;color:#fff;border-radius:20px}
+.decision{background:#FFF2CC;border:2px solid #7F6000;color:#1A1A1A;transform:none;border-radius:8px}
+.action{background:#DEEAF1;border:1.5px solid #2E75B6;color:#1F4E79}
+.outcome{border-radius:8px;padding:13px 22px;font-size:12px;text-align:center;width:240px}
+.outcome-green{background:#E2EFDA;border:1.5px solid #375623;color:#375623}
+.outcome-blue{background:#BDD7EE;border:1.5px solid #2E75B6;color:#1F4E79}
+.outcome-yellow{background:#FFF2CC;border:1.5px solid #7F6000;color:#7F6000}
+.arrow{width:2px;height:24px;background:#2E75B6;margin:0 auto;position:relative}
+.arrow::after{content:'▼';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);color:#2E75B6;font-size:14px}
+.branch-row{display:flex;justify-content:space-around;width:100%;margin-top:0;align-items:flex-start;position:relative}
+.branch-row::before{content:'';position:absolute;top:0;left:25%;right:25%;height:2px;background:#2E75B6}
+.branch{display:flex;flex-direction:column;align-items:center;gap:0;width:240px}
+.branch-label{font-size:11px;font-weight:bold;color:#2E75B6;margin-bottom:4px;text-align:center}
+.v-sm{width:2px;height:20px;background:#AAAAAA;margin:0 auto}
+.v-sm-b{width:2px;height:20px;background:#2E75B6;margin:0 auto}
+.note{background:#F2F2F2;border-radius:6px;padding:8px 14px;font-size:11px;color:#595959;text-align:center;margin-top:4px;width:200px}
+.calendly-box{background:#1F4E79;color:#fff;border-radius:8px;padding:10px 16px;font-size:12px;text-align:center;width:220px;margin-top:4px}
+.reminder{background:#FCE4D6;border:1px solid #C55A11;border-radius:6px;padding:8px 12px;font-size:11px;color:#833C00;text-align:center;width:200px}
+</style></head>
+<body>
+<h1>Project 2 — Executive Calendar Architecture</h1>
+<p class="sub">Meeting Request to Confirmed Entry — Scheduling Workflow | Microsoft Outlook + Calendly</p>
+<div class="canvas">
+  <div class="flow">
+    <div class="step start">📩 Meeting Request Received</div>
+    <div class="arrow"></div>
+    <div style="height:10px"></div>
+    <div class="step decision">Is it a Client-Facing request?</div>
+    <div style="height:10px"></div>
+    <div class="branch-row">
+      <div class="branch">
+        <div class="branch-label">YES — External / Client</div>
+        <div class="v-sm-b"></div>
+        <div class="step decision" style="width:220px;font-size:12px">What Tier is the client?</div>
+        <div class="v-sm-b"></div>
+        <div style="display:flex;gap:10px">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+            <div style="font-size:10px;color:#375623;font-weight:bold">TIER 1</div>
+            <div class="outcome outcome-green" style="width:100px;font-size:11px">Same-day response<br>Executive Calendly Link</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+            <div style="font-size:10px;color:#7F6000;font-weight:bold">TIER 2/3</div>
+            <div class="outcome outcome-yellow" style="width:100px;font-size:11px">24hr response<br>Standard Client Link</div>
+          </div>
+        </div>
+        <div class="v-sm-b"></div>
+        <div class="calendly-box">📅 Calendly Auto-Books Slot<br><small>Confirmation email sent automatically</small></div>
+      </div>
+      <div class="branch">
+        <div class="branch-label">NO — Internal Request</div>
+        <div class="v-sm-b"></div>
+        <div class="step decision" style="width:220px;font-size:12px">What meeting type?</div>
+        <div class="v-sm-b"></div>
+        <div style="display:flex;gap:8px">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+            <div style="font-size:10px;color:#2E75B6;font-weight:bold">REVIEW</div>
+            <div class="outcome outcome-blue" style="width:95px;font-size:10px">45 min cap<br>Internal Link</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+            <div style="font-size:10px;color:#595959;font-weight:bold">STANDUP</div>
+            <div class="outcome" style="width:95px;font-size:10px;background:#F2F2F2;border:1px solid #aaa;border-radius:6px;padding:10px">30 min max<br>Team Link</div>
+          </div>
+        </div>
+        <div class="v-sm-b"></div>
+        <div class="calendly-box" style="background:#2E75B6">📅 Internal Calendly Link<br><small>No prep block required</small></div>
+      </div>
+    </div>
+    <div style="height:16px"></div>
+    <div class="arrow" style="margin-top:4px"></div>
+    <div style="height:10px"></div>
+    <div class="step action" style="width:400px">📋 Meeting Added to Executive Master Calendar Log<br><small style="font-weight:normal;font-size:11px">(Meeting ID, Type, Tier, Duration, Prep Block logged)</small></div>
+    <div class="arrow"></div>
+    <div style="height:10px"></div>
+    <div style="display:flex;gap:20px;justify-content:center">
+      <div class="reminder">⏰ Reminder sent<br>24 hrs before</div>
+      <div class="reminder" style="background:#E2EFDA;border-color:#375623;color:#375623">⏰ Reminder sent<br>30 min before</div>
+    </div>
+    <div style="height:14px"></div>
+    <div class="arrow" style="margin-top:4px"></div>
+    <div style="height:10px"></div>
+    <div class="step start" style="background:#375623;border-radius:20px;width:340px">✅ Meeting Held — Post-Note Block Begins</div>
+  </div>
+</div>
+</body></html>

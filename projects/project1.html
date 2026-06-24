@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Enterprise Document Control System | Souravdeep Singh</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+  .proj-hero{height:460px;background-size:cover;background-position:center;position:relative;}
+  .proj-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,23,42,.95) 0%,rgba(15,23,42,.55) 50%,rgba(15,23,42,.15) 100%);display:flex;align-items:flex-end;padding:48px;}
+  .proj-hero-content{max-width:800px;color:#fff;}
+  .proj-num{font-size:12px;font-weight:800;color:rgba(255,255,255,.45);letter-spacing:3px;margin-bottom:10px;}
+  .proj-title-h{font-size:clamp(24px,4vw,42px);font-weight:800;line-height:1.15;margin-bottom:10px;}
+  .proj-sub{font-size:15px;color:rgba(255,255,255,.7);margin-bottom:18px;}
+  .proj-htags{display:flex;gap:8px;flex-wrap:wrap;}
+  .proj-htag{font-size:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.85);padding:3px 12px;border-radius:20px;font-weight:600;}
+  .pb{max-width:1100px;margin:0 auto;padding:60px 32px;}
+  .mrow{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:56px;}
+  @media(max-width:600px){.mrow{grid-template-columns:1fr;}}
+  .mcard{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px 20px;text-align:center;box-shadow:var(--shadow-sm);}
+  .mval{font-size:34px;font-weight:800;line-height:1;margin-bottom:6px;}
+  .mlbl{font-size:12px;color:var(--muted);font-weight:500;}
+  .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px;}
+  @media(max-width:700px){.sgrid{grid-template-columns:1fr;}}
+  .sbox{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-sm);}
+  .slbl{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}
+  .stext{font-size:14px;color:var(--muted);line-height:1.8;}
+  .cc{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:36px;margin-bottom:24px;box-shadow:var(--shadow-sm);}
+  .rc{background:linear-gradient(135deg,var(--pale),#DBEAFE);border:1px solid #BFDBFE;border-radius:var(--radius);padding:36px;margin-bottom:24px;}
+  .aitem{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border);}
+  .aitem:last-child{border:none;}
+  .anum{width:30px;height:30px;border-radius:50%;background:var(--badge-bg);color:var(--blue);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .atext{font-size:14px;color:var(--text);line-height:1.7;padding-top:4px;}
+  .dframe{border:none;width:100%;height:500px;display:block;}
+  .df-wrap{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:24px;box-shadow:var(--shadow-sm);}
+  .df-hdr{padding:18px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+  .df-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);}
+  .df-title{font-size:14px;font-weight:700;}
+  .df-cap{font-size:12px;color:var(--muted);margin-left:auto;}
+  .trow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .ttag{background:var(--badge-bg);color:var(--badge-text);font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;}
+  .ipgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media(max-width:700px){.ipgrid{grid-template-columns:1fr;}}
+  .ipcard{background:var(--pale);border:1px solid var(--border);border-radius:var(--radius-sm);padding:22px;border-left:3px solid var(--blue);}
+  .iptitle{font-size:12px;font-weight:800;color:var(--blue);margin-bottom:8px;letter-spacing:.5px;text-transform:uppercase;}
+  .iptext{font-size:14px;color:var(--muted);line-height:1.7;font-style:italic;}
+  .pnav{display:flex;justify-content:space-between;margin-top:56px;padding-top:32px;border-top:1px solid var(--border);}
+  .parrow{font-size:13px;font-weight:700;color:var(--blue);padding:10px 20px;border:1px solid var(--border);border-radius:8px;background:#fff;transition:all .2s;}
+  .parrow:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+  .back-l{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:6px;margin-bottom:8px;transition:color .2s;}
+  .back-l:hover{color:var(--blue);}
+  .dl-box{background:#fff;border:2px solid var(--blue);border-radius:var(--radius);padding:24px 28px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .dl-text h4{font-size:16px;font-weight:700;color:var(--blue-dark);margin-bottom:4px;}
+  .dl-text p{font-size:13px;color:var(--muted);}
+
+  .xl-preview{background:#fff;border:1px solid #D1D5DB;border-radius:10px;overflow:hidden;margin:28px 0;box-shadow:0 2px 8px rgba(0,0,0,.07);}
+  .xl-titlebar{background:#217346;color:#fff;padding:10px 16px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;}
+  .xl-titlebar svg{opacity:.85;}
+  .xl-tabs{background:#1a5c38;display:flex;gap:2px;padding:4px 12px 0;}
+  .xl-tab{background:#fff;color:#217346;font-size:11px;font-weight:700;padding:4px 14px;border-radius:4px 4px 0 0;cursor:default;}
+  .xl-tab.dim{background:#c6e0b4;color:#1a5c38;}
+  .xl-scroll{overflow-x:auto;}
+  table.xl{border-collapse:collapse;font-size:12px;min-width:100%;}
+  table.xl th{background:#217346;color:#fff;padding:7px 12px;text-align:left;font-weight:600;white-space:nowrap;}
+  table.xl td{padding:6px 12px;border-bottom:1px solid #E5E7EB;white-space:nowrap;color:#1F2937;}
+  table.xl tr:nth-child(even) td{background:#F0FFF4;}
+  table.xl tr:hover td{background:#DCFCE7;}
+  .xl-key{background:#FFF9C4;font-weight:700;color:#92400E;}
+  .xl-fk{color:#1D4ED8;font-weight:600;}
+  .xl-badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;}
+  .xl-green{background:#D1FAE5;color:#065F46;}
+  .xl-yellow{background:#FEF3C7;color:#92400E;}
+  .xl-red{background:#FEE2E2;color:#991B1B;}
+  .xl-blue{background:#DBEAFE;color:#1E40AF;}
+  .xl-caption{font-size:12px;color:#6B7280;padding:8px 16px;border-top:1px solid #E5E7EB;background:#F9FAFB;}
+  .biz-impact{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border:1px solid #BFDBFE;border-radius:10px;padding:24px 28px;margin:28px 0;}
+  .biz-impact h4{font-size:15px;font-weight:700;color:#1E3A8A;margin-bottom:14px;}
+  .biz-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .biz-cell{background:#fff;border-radius:8px;padding:16px;text-align:center;border:1px solid #BFDBFE;}
+  .biz-num{font-size:26px;font-weight:800;color:#1D4ED8;}
+  .biz-lbl{font-size:12px;color:#64748B;margin-top:4px;line-height:1.4;}
+  @media(max-width:640px){.biz-row{grid-template-columns:1fr;}}
+
+  
+  .xl-section-title{font-size:17px;font-weight:800;color:var(--text);margin:36px 0 20px;display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:2px solid var(--border);}
+  .xl-sheet-block{background:#fff;border:1px solid #D1D5DB;border-radius:10px;overflow:hidden;margin-bottom:52px;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+  .xl-sheet-header{display:flex;align-items:center;gap:14px;padding:14px 20px;background:#F8FAFC;border-bottom:1px solid #E5E7EB;}
+  .xl-sheet-icon{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:#217346;border-radius:8px;flex-shrink:0;}
+  .xl-sheet-tab{font-size:11px;font-weight:700;color:#217346;letter-spacing:.5px;text-transform:uppercase;margin-bottom:3px;}
+  .xl-sheet-title{font-size:14px;font-weight:700;color:var(--text);}
+  .xl-sheet-explain{font-size:13px;color:var(--muted);line-height:1.7;padding:12px 20px;background:#FAFAFA;border-bottom:1px solid #E5E7EB;}
+  
+  /* PROJECT PAGE TABS */
+  .proj-tab-wrap{display:flex;gap:10px;margin:24px 0 20px;border-bottom:2px solid var(--border);padding-bottom:0;}
+  .proj-tab-btn{padding:10px 22px;border-radius:8px 8px 0 0;border:1px solid transparent;border-bottom:none;background:transparent;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .2s;margin-bottom:-2px;}
+  .proj-tab-btn.active{background:#fff;color:var(--blue);border-color:var(--border);border-bottom:2px solid #fff;}
+  .proj-tab-btn:hover:not(.active){color:var(--blue);}
+  .tab-pane{display:none;}
+  .tab-pane.active{display:block;}
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">
+      <span class="brand-dot"></span>
+      <div><span class="brand-name">Souravdeep Singh</span><br>
+      <span class="brand-role">Office Administrator &amp; Operations Professional</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../experience.html">Experience &amp; Education</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../involvement.html">Work &amp; Involvement</a>
+      <a href="../skills.html">Skills</a>
+      <a href="../contact.html" class="nav-cta">Contact</a>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="proj-hero" style="background-image:url('https://picsum.photos/seed/p1office/1400/460')">
+  <div class="proj-overlay">
+    <div class="proj-hero-content">
+      <div class="proj-num">PROJECT 01</div>
+      <h1 class="proj-title-h">Enterprise Document Control System</h1>
+      <div class="proj-sub">Document Governance and Information Architecture</div>
+      <div class="proj-htags"><span class="proj-htag">OneDrive</span><span class="proj-htag">Excel</span><span class="proj-htag">Star Schema</span><span class="proj-htag">SOPs</span></div>
+    </div>
+  </div>
+</section>
+<div class="pb">
+  <a href="../projects.html" class="back-l">&#8592; Back to All Projects</a>
+  <div class="mrow" style="margin-top:32px;"><div class="mcard"><div class="mval" style="color:#059669">87%</div><div class="mlbl">Reduction in file-search time</div></div><div class="mcard"><div class="mval" style="color:#1D4ED8">35%</div><div class="mlbl">Faster new-hire onboarding</div></div><div class="mcard"><div class="mval" style="color:#7C3AED">$4,200</div><div class="mlbl">Contract penalties avoided</div></div></div>
+  <div class="dl-box">
+    <div class="dl-text"><h4>&#128190; Download Document Registry Excel</h4><p>Real working file. Open it, test the formulas, check the validation. This is not a screenshot.</p></div>
+    <a href="../assets/deliverables/Project1_Document_Registry_StarSchema.xlsx" class="btn btn-primary" download>Download File</a>
+  </div>
+
+  <div class="proj-tab-wrap">
+    <button class="proj-tab-btn active" onclick="switchProjTab('star',this)">
+      <i class="fa-solid fa-chart-line"></i> STAR Story
+    </button>
+    <button class="proj-tab-btn" onclick="switchProjTab('practical',this)">
+      <i class="fa-solid fa-table-list"></i> Practical Work
+    </button>
+  </div>
+
+  <div id="pane-star" class="tab-pane active">
+  <div class="sgrid">
+    <div class="sbox" style="border-top:3px solid #F59E0B;">
+      <div class="slbl" style="color:#D97706;">Situation</div>
+      <div class="stext">A 48-person professional services firm was losing 14 hours every week to document chaos. Files lived on personal desktops, personal cloud folders, and scattered messaging threads. Version conflicts were routine. Client-facing proposals circulated in three competing drafts at the same time. Teams spent more time tracking down documents than doing actual work.</div>
+    </div>
+    <div class="sbox" style="border-top:3px solid #8B5CF6;">
+      <div class="slbl" style="color:#7C3AED;">Task and Objective</div>
+      <div class="stext">Design and implement a zero-friction document governance system on Microsoft OneDrive. The goal was simple: any employee, on any day, should be able to find any document within 60 seconds without asking anyone for help.</div>
+    </div>
+  </div>
+  <div class="cc">
+    <div style="font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Action</div>
+    <div style="font-size:20px;font-weight:700;margin-bottom:16px;">What I Built and How</div>
+    <div class="aitem"><div class="anum">1</div><div class="atext">Designed a multi-tiered folder taxonomy using strict numerical prefixing (01_Operations, 02_Finance, 03_Client_Services) to prevent buried, hard-to-navigate hierarchies.</div></div><div class="aitem"><div class="anum">2</div><div class="atext">Established a mandatory file naming convention: YYYYMMDD_DocumentName_vX.X to eliminate version confusion at the file-system level.</div></div><div class="aitem"><div class="anum">3</div><div class="atext">Built a Star Schema architecture in Excel with a central Master Document Registry (Fact Table) tracking every file by Document ID, version, department owner, and compliance status.</div></div><div class="aitem"><div class="anum">4</div><div class="atext">Created three linked Dimension Tables: Access Permission Matrix, Regulatory Retention Schedule, and Department Code Directory.</div></div><div class="aitem"><div class="anum">5</div><div class="atext">Authored five Standard Operating Procedures covering the full document lifecycle: creation, version control, archiving, new-hire provisioning, and emergency retrieval.</div></div>
+  </div>
+  <div class="df-wrap">
+    <div class="df-hdr"><div class="df-dot"></div><div class="df-title">Process Diagram</div><div class="df-cap">Folder taxonomy with role-based access permissions across all departments</div></div>
+    <iframe src="diagrams/Diagram_P1_Folder_Hierarchy.html" class="dframe" title="Project Diagram"></iframe>
+  </div>
+  <div class="rc">
+    <div style="font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Result</div>
+    <div style="font-size:20px;font-weight:700;color:var(--blue-dark);margin-bottom:12px;">The Outcome</div>
+    <div style="font-size:15px;color:var(--text);line-height:1.8;">File-search time dropped from 14 hours per week to under 2 hours company-wide. New hires reached operational independence 35% faster due to the self-service SOP repository. During the migration audit, three expiring high-value vendor contracts were identified and flagged, preventing $4,200 in auto-renewal penalties.</div>
+  </div>
+  <div class="cc">
+    <div style="font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Tools and Skills</div>
+    <div style="font-size:20px;font-weight:700;margin-bottom:14px;">What Was Used</div>
+    <div class="trow"><span class="ttag">Microsoft OneDrive</span><span class="ttag">Microsoft Excel</span><span class="ttag">Microsoft Word</span><span class="ttag">Star Schema Design</span><span class="ttag">Data Validation</span><span class="ttag">SOP Writing</span></div>
+  </div>
+  <div class="cc">
+    <div style="font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Interview Ready</div>
+    <div style="font-size:20px;font-weight:700;margin-bottom:16px;">How to Talk About This Project</div>
+    <div class="ipgrid">
+      <div class="ipcard"><div class="iptitle">Self-Service First</div><div class="iptext">"When I designed this system, the test I kept applying was: can a brand-new employee find a critical client file on their first day without stopping anyone to ask? Every naming convention and folder label was written with that person in mind."</div></div>
+      <div class="ipcard"><div class="iptitle">Data Logic, Not Just Filing</div><div class="iptext">"I treated the office filing structure like a relational database. The master document registry connected to compliance timelines and user-role tables. That turned a flat cloud drive into an audit-ready corporate asset."</div></div>
+    </div>
+  </div>
+  </div>
+
+  <div id="pane-practical" class="tab-pane">
+  <div class="xl-section-title"><i class="fa-solid fa-table-list" style="color:#217346;"></i>What the Deliverable Contains - Every Sheet Explained</div><div class="xl-sheet-block">
+    <div class="xl-sheet-header"><div class="xl-sheet-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="#217346"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><div class="xl-sheet-tab">Sheet 1 - FACT TABLE</div><div class="xl-sheet-title">Master Document Registry</div></div></div>
+    <div class="xl-sheet-explain">Central record for 247 documents. Foreign keys link to dimension tables. Conditional formatting auto-flags documents expiring within 60 days in red - no manual checking needed.</div>
+    <div class="xl-scroll"><table class="xl"><tr><th>Doc ID</th><th>Document Name</th><th>Dept Code</th><th>Version</th><th>Status</th><th>Owner</th><th>Expiry Date</th><th>Vendor ID</th></tr>
+<tr><td class="xl-key">DOC-0001</td><td>NDA_ClientA_v2.1</td><td class="xl-fk">OPS-01</td><td>v2.1</td><td><span class="xl-badge xl-green">Active</span></td><td>J. Patel</td><td>2026-09-15</td><td class="xl-fk">VND-004</td></tr>
+<tr><td class="xl-key">DOC-0002</td><td>MSA_VendorX_v1.0</td><td class="xl-fk">FIN-02</td><td>v1.0</td><td><span class="xl-badge xl-yellow">Review Due</span></td><td>S. Singh</td><td>2025-12-01</td><td class="xl-fk">VND-011</td></tr>
+<tr><td class="xl-key">DOC-0003</td><td>HR_Onboarding_SOP_v3.2</td><td class="xl-fk">HR-03</td><td>v3.2</td><td><span class="xl-badge xl-green">Active</span></td><td>M. Chen</td><td>2027-03-30</td><td class="xl-fk"> - </td></tr>
+<tr><td class="xl-key">DOC-0005</td><td>IT_Access_Policy_v2.0</td><td class="xl-fk">IT-04</td><td>v2.0</td><td><span class="xl-badge xl-red">Expiring Soon</span></td><td>L. Tremblay</td><td style="background:#FEE2E2;font-weight:700;color:#991B1B;">2025-11-30</td><td class="xl-fk"> - </td></tr></table></div>
+    <div class="xl-caption">Formula driving red highlight: =IF(AND(H2&lt;&gt;"-",H2-TODAY()&lt;=60),"EXPIRING","OK")</div>
+  </div><div class="xl-sheet-block">
+    <div class="xl-sheet-header"><div class="xl-sheet-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="#4B7C59"/><path d="M7 7h10M7 12h10M7 17h7" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><div class="xl-sheet-tab">Sheet 2 - DIMENSION TABLE</div><div class="xl-sheet-title">Department Directory</div></div></div>
+    <div class="xl-sheet-explain">Lookup table that decodes every Dept Code in the Fact Table. Ensures no department is ever spelled differently across records. VLOOKUP pulls department names into any report automatically.</div>
+    <div class="xl-scroll"><table class="xl"><tr><th>Dept Code</th><th>Department Name</th><th>Director</th><th>Floor</th><th>Doc Count</th><th>Primary Contact</th></tr>
+<tr><td class="xl-key">OPS-01</td><td>Operations</td><td>A. Morrison</td><td>Floor 3</td><td style="font-weight:700;color:#1D4ED8;">84</td><td>ops@company.ca</td></tr>
+<tr><td class="xl-key">FIN-02</td><td>Finance and Accounting</td><td>B. Nguyen</td><td>Floor 2</td><td style="font-weight:700;color:#1D4ED8;">61</td><td>finance@company.ca</td></tr>
+<tr><td class="xl-key">HR-03</td><td>Human Resources</td><td>C. Williams</td><td>Floor 1</td><td style="font-weight:700;color:#1D4ED8;">47</td><td>hr@company.ca</td></tr>
+<tr><td class="xl-key">IT-04</td><td>Information Technology</td><td>D. Patel</td><td>Floor 4</td><td style="font-weight:700;color:#1D4ED8;">38</td><td>it@company.ca</td></tr></table></div>
+    <div class="xl-caption">Formula: =VLOOKUP(C2,DeptDirectory!A:F,2,0) pulls department name into reports without manual typing.</div>
+  </div><div class="xl-sheet-block">
+    <div class="xl-sheet-header"><div class="xl-sheet-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="#4B7C59"/><path d="M7 7h10M7 12h10M7 17h7" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><div class="xl-sheet-tab">Sheet 3 - DIMENSION TABLE</div><div class="xl-sheet-title">Vendor Directory</div></div></div>
+    <div class="xl-sheet-explain">Every vendor linked to a document is tracked here. One place to update vendor contact or contract renewal date - the Fact Table reflects the change instantly via foreign key.</div>
+    <div class="xl-scroll"><table class="xl"><tr><th>Vendor ID</th><th>Vendor Name</th><th>Category</th><th>Contract Renewal</th><th>Contact</th><th>Status</th></tr>
+<tr><td class="xl-key">VND-004</td><td>LegalShield Partners</td><td>Legal Services</td><td>2026-09-15</td><td>T. Broussard</td><td><span class="xl-badge xl-green">Active</span></td></tr>
+<tr><td class="xl-key">VND-011</td><td>OfficeMax Supply Co.</td><td>Office Supplies</td><td>2025-12-01</td><td>M. Santos</td><td><span class="xl-badge xl-green">Active</span></td></tr>
+<tr><td class="xl-key">VND-002</td><td>Apex IT Solutions</td><td>Technology</td><td style="background:#FEE2E2;font-weight:700;color:#991B1B;">2025-11-15</td><td>K. Lee</td><td><span class="xl-badge xl-red">Expiring</span></td></tr></table></div>
+    <div class="xl-caption">Three expiring contracts flagged during audit using this table - prevented $4,200 in automatic renewals.</div>
+  </div><div class="xl-sheet-block">
+    <div class="xl-sheet-header"><div class="xl-sheet-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="#4B7C59"/><path d="M7 7h10M7 12h10M7 17h7" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><div class="xl-sheet-tab">Sheet 4 - DIMENSION TABLE</div><div class="xl-sheet-title">Retention Schedule</div></div></div>
+    <div class="xl-sheet-explain">Different document types must be kept for different lengths of time under Canadian law. This table drives automatic archiving alerts - the system tells you what to delete, not the other way around.</div>
+    <div class="xl-scroll"><table class="xl"><tr><th>Doc Type</th><th>Retention Period</th><th>Legal Basis</th><th>Archiving Action</th></tr>
+<tr><td class="xl-key">NDA / Legal</td><td>7 years post-expiry</td><td>Ontario Business Records Act</td><td>Move to Legal Archive folder</td></tr>
+<tr><td class="xl-key">Financial Reports</td><td>7 years</td><td>CRA Requirements</td><td>Move to Finance Archive</td></tr>
+<tr><td class="xl-key">HR Records</td><td>3 years post-termination</td><td>Employment Standards Act</td><td>HR Secure Archive</td></tr>
+<tr><td class="xl-key">IT Security Policies</td><td>3 years</td><td>PIPEDA</td><td>Delete after review</td></tr></table></div>
+    <div class="xl-caption">Formula: =EDATE(CreationDate, RetentionMonths) calculates exact deletion or archiving deadlines per document.</div>
+  </div><div class="biz-impact"><h4>Business Impact - Why This Matters to Employers</h4><div class="biz-row"><div class="biz-cell"><div class="biz-num">14 hrs/wk</div><div class="biz-lbl">document retrieval time eliminated across 48 staff</div></div><div class="biz-cell"><div class="biz-num">$4,200</div><div class="biz-lbl">contract auto-renewals prevented by expiry tracking</div></div><div class="biz-cell"><div class="biz-num">35%</div><div class="biz-lbl">faster new-hire onboarding via self-service SOP library</div></div></div></div>
+  </div>
+
+  <div class="pnav"><span></span><a href="project2.html" class="parrow">Calendar System &#8594;</a></div>
+</div>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-name">Souravdeep Singh</div>
+      <p>Office Administrator and Operations Professional with a passion for building systems that actually work.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../experience.html">Experience</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../involvement.html">Work & Involvement</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/sourav2312/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/souravv2412/" target="_blank">Instagram</a>
+      <a href="mailto:singh.s.deep800@gmail.com">singh.s.deep800@gmail.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Souravdeep Singh &nbsp;|&nbsp; Windsor, Ontario, Canada
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+<script>
+  function switchProjTab(name, btn) {
+    document.querySelectorAll('.proj-tab-btn').forEach(function(b){ b.classList.remove('active'); });
+    document.querySelectorAll('.tab-pane').forEach(function(p){ p.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById('pane-' + name).classList.add('active');
+  }
+</script>
+</body>
+</html>

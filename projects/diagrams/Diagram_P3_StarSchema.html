@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Project 3 — Star Schema</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction:column;align-items:center;padding:30px}
+h1{color:#1F4E79;font-size:20px;margin-bottom:4px;text-align:center}
+p.sub{color:#595959;font-size:13px;margin-bottom:24px;text-align:center}
+.canvas{background:#fff;border-radius:12px;padding:40px;box-shadow:0 4px 20px rgba(0,0,0,.12);width:860px}
+.schema{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto auto;gap:20px;align-items:center;justify-items:center}
+.fact{background:#1F4E79;color:#fff;border-radius:10px;padding:20px;width:260px;grid-column:2;grid-row:2;text-align:left}
+.fact h3{font-size:14px;margin-bottom:4px;color:#BDD7EE}
+.fact .title{font-size:16px;font-weight:bold;margin-bottom:10px;border-bottom:1px solid #2E75B6;padding-bottom:6px}
+.fact ul{list-style:none;font-size:12px;line-height:1.8}
+.fact ul li::before{content:"▸ ";color:#BDD7EE}
+.fact .pk{color:#FFF2CC;font-weight:bold}
+.dim{background:#DEEAF1;border:2px solid #2E75B6;border-radius:10px;padding:16px;width:220px;text-align:left}
+.dim h3{font-size:11px;color:#2E75B6;font-weight:bold;letter-spacing:1px;margin-bottom:4px}
+.dim .title{font-size:13px;font-weight:bold;color:#1F4E79;margin-bottom:8px;border-bottom:1px solid #BDD7EE;padding-bottom:5px}
+.dim ul{list-style:none;font-size:11px;color:#1A1A1A;line-height:1.8}
+.dim ul li::before{content:"• ";color:#2E75B6}
+.dim .pk{color:#375623;font-weight:bold}
+.dim .fk{color:#833C00;font-weight:bold}
+.connector{display:flex;align-items:center;justify-content:center;font-size:11px;color:#2E75B6;font-weight:bold;flex-direction:column;gap:4px}
+.connector .line{background:#2E75B6;height:2px;width:60px}
+.connector .label{background:#BDD7EE;border-radius:4px;padding:2px 8px;font-size:10px;color:#1F4E79}
+/* grid placement */
+.dim-top{grid-column:2;grid-row:1}
+.dim-left{grid-column:1;grid-row:2}
+.dim-right{grid-column:3;grid-row:2}
+.dim-bottom{grid-column:2;grid-row:3}
+.conn-top{grid-column:2;grid-row:1;align-self:end;padding-bottom:4px}
+.conn-left{grid-column:1;grid-row:2;justify-self:end;padding-right:4px;flex-direction:row}
+.conn-right{grid-column:3;grid-row:2;justify-self:start;padding-left:4px;flex-direction:row}
+.conn-bottom{grid-column:2;grid-row:3;align-self:start;padding-top:4px}
+.legend{display:flex;gap:24px;margin-top:28px;justify-content:center;flex-wrap:wrap}
+.leg{display:flex;align-items:center;gap:8px;font-size:12px;color:#595959}
+.leg-box{width:14px;height:14px;border-radius:3px}
+</style></head>
+<body>
+<h1>Project 3 — Financial Data Architecture</h1>
+<p class="sub">Star Schema Data Model | Master Transaction Log (Fact) + 4 Dimension Tables | Microsoft Excel</p>
+<div class="canvas">
+  <div class="schema">
+    <!-- Top connector placeholder, dim top, fact, dims left/right/bottom -->
+    <div></div>
+    <div class="dim dim-top">
+      <h3>DIMENSION TABLE 1</h3>
+      <div class="title">Vendor Directory</div>
+      <ul>
+        <li class="pk">Vendor ID (PK)</li>
+        <li>Vendor Name</li>
+        <li>Contact Email</li>
+        <li>Payment Terms</li>
+        <li>Vendor Tier</li>
+      </ul>
+    </div>
+    <div></div>
+
+    <div class="dim dim-left">
+      <h3>DIMENSION TABLE 2</h3>
+      <div class="title">Department Cost Centers</div>
+      <ul>
+        <li class="pk">Dept Code (PK)</li>
+        <li>Department Name</li>
+        <li>Department Head</li>
+        <li>Annual Budget ($)</li>
+      </ul>
+    </div>
+
+    <div class="fact">
+      <h3>FACT TABLE</h3>
+      <div class="title">Master Transaction Log</div>
+      <ul>
+        <li class="pk">Invoice ID (PK)</li>
+        <li class="fk" style="color:#FFF2CC">Vendor ID (FK) →</li>
+        <li class="fk" style="color:#FFF2CC">Dept Code (FK) →</li>
+        <li class="fk" style="color:#FFF2CC">Status Code (FK) →</li>
+        <li>Invoice Date</li>
+        <li>Amount ($)</li>
+        <li>Tax ($)</li>
+        <li>Total ($)</li>
+        <li>Days Outstanding</li>
+      </ul>
+    </div>
+
+    <div class="dim dim-right">
+      <h3>DIMENSION TABLE 3</h3>
+      <div class="title">Tax Rate Reference</div>
+      <ul>
+        <li class="pk">Jurisdiction (PK)</li>
+        <li>Tax Type</li>
+        <li>Rate (%)</li>
+        <li>Effective Date</li>
+      </ul>
+    </div>
+
+    <div></div>
+    <div class="dim dim-bottom">
+      <h3>DIMENSION TABLE 4</h3>
+      <div class="title">Payment Status Reference</div>
+      <ul>
+        <li class="pk">Status Code (PK)</li>
+        <li>Description</li>
+        <li>Action Required</li>
+        <li>Escalate to Manager?</li>
+      </ul>
+    </div>
+    <div></div>
+  </div>
+
+  <div style="margin-top:20px;background:#F2F2F2;border-radius:8px;padding:14px 20px;border-left:4px solid #2E75B6">
+    <strong style="color:#1F4E79;font-size:13px">How to explain this in an interview:</strong><br>
+    <span style="font-size:12px;color:#1A1A1A">"Every invoice row in the Master Transaction Log carries a Vendor ID, Dept Code, and Status Code. These are foreign keys that join to the corresponding dimension tables — so instead of storing 'Nexus Supply Co.' in 600 rows, we store VND-001 once and look it up. That's what makes the system queryable and scalable."</span>
+  </div>
+
+  <div class="legend">
+    <div class="leg"><div class="leg-box" style="background:#1F4E79"></div>Fact Table (Central)</div>
+    <div class="leg"><div class="leg-box" style="background:#DEEAF1;border:2px solid #2E75B6"></div>Dimension Tables (Connected)</div>
+    <div class="leg"><span style="color:#375623;font-weight:bold;font-size:13px">PK</span> = Primary Key</div>
+    <div class="leg"><span style="color:#833C00;font-weight:bold;font-size:13px">FK</span> = Foreign Key (joins to Dimension)</div>
+  </div>
+</div>
+</body></html>

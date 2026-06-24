@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Project 4 — Escalation Flow</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction:column;align-items:center;padding:30px}
+h1{color:#1F4E79;font-size:20px;margin-bottom:4px;text-align:center}
+p.sub{color:#595959;font-size:13px;margin-bottom:24px;text-align:center}
+.canvas{background:#fff;border-radius:12px;padding:36px 40px;box-shadow:0 4px 20px rgba(0,0,0,.12);width:880px}
+.flow{display:flex;flex-direction:column;align-items:center}
+.box{border-radius:8px;padding:13px 22px;font-size:13px;font-weight:bold;text-align:center;width:320px}
+.start{background:#1F4E79;color:#fff;border-radius:20px;width:340px}
+.decision{background:#FFF2CC;border:2px solid #7F6000;color:#1A1A1A;font-size:12px}
+.action{background:#DEEAF1;border:1.5px solid #2E75B6;color:#1F4E79;font-size:12px;font-weight:normal}
+.action strong{font-weight:bold;display:block}
+.end-green{background:#E2EFDA;border:2px solid #375623;color:#375623;border-radius:20px;width:300px;font-size:13px}
+.end-red{background:#FCE4D6;border:2px solid #C00000;color:#C00000;border-radius:20px;width:300px;font-size:13px}
+.end-blue{background:#BDD7EE;border:2px solid #2E75B6;color:#1F4E79;border-radius:20px;width:300px;font-size:13px}
+.arrow{width:2px;height:22px;background:#2E75B6;margin:0 auto;position:relative}
+.arrow::after{content:'▼';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);color:#2E75B6;font-size:14px}
+.h-bar{height:2px;background:#2E75B6;width:500px;margin:0 auto}
+.branch-row{display:flex;justify-content:space-around;width:100%;align-items:flex-start}
+.branch{display:flex;flex-direction:column;align-items:center;width:260px;gap:0}
+.branch-label{font-size:11px;font-weight:bold;margin-bottom:6px;padding:3px 10px;border-radius:4px;text-align:center}
+.yes-label{background:#E2EFDA;color:#375623}
+.no-label{background:#FCE4D6;color:#C00000}
+.int-label{background:#DEEAF1;color:#1F4E79}
+.v-sm{width:2px;height:18px;background:#AAAAAA;margin:0 auto}
+.v-b{width:2px;height:18px;background:#2E75B6;margin:0 auto}
+.template-tag{background:#1F4E79;color:#fff;border-radius:4px;padding:3px 8px;font-size:10px;display:inline-block;margin-top:4px}
+.crm-note{background:#F2F2F2;border-radius:6px;padding:6px 12px;font-size:10px;color:#595959;text-align:center;width:200px;margin-top:4px}
+.section-label{font-size:10px;letter-spacing:1px;font-weight:bold;color:#2E75B6;margin-bottom:6px;text-align:center}
+</style></head>
+<body>
+<h1>Project 4 — Email Operations Management</h1>
+<p class="sub">Email Received → Response Sent — Escalation Decision Flow | Gmail + Airtable CRM</p>
+<div class="canvas">
+  <div class="flow">
+    <div class="box start">📩 Email Received in Inbox</div>
+    <div class="arrow"></div><div style="height:10px"></div>
+
+    <div class="box decision">Gmail Filter Auto-Applies Label<br><small style="font-weight:normal">(Client / Vendor / Finance / Urgent / Internal)</small></div>
+    <div class="arrow"></div><div style="height:10px"></div>
+
+    <div class="box decision">Is it marked URGENT or from a Tier 1 Client?</div>
+    <div style="height:10px"></div>
+    <div class="h-bar"></div>
+    <div class="branch-row" style="margin-top:0">
+      <div class="branch">
+        <div class="branch-label yes-label">YES — Urgent / Tier 1</div>
+        <div class="v-b"></div>
+        <div class="box action" style="width:220px"><strong>Flag as URGENT</strong>Notify team lead within 1 hour<br>Team lead reviews before response</div>
+        <div class="v-b"></div>
+        <div class="box decision" style="width:220px;font-size:11px">Does it require a custom response?</div>
+        <div style="display:flex;gap:10px;margin-top:10px">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+            <div style="font-size:10px;color:#375623;font-weight:bold">YES</div>
+            <div class="box action" style="width:100px;font-size:10px;padding:8px"><strong>Draft custom reply</strong>Team lead approves</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+            <div style="font-size:10px;color:#7F6000;font-weight:bold">NO</div>
+            <div class="box action" style="width:100px;font-size:10px;padding:8px"><strong>Use Template</strong>T-01 or T-09</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="branch">
+        <div class="branch-label no-label">NO — Standard Email</div>
+        <div class="v-b"></div>
+        <div class="box decision" style="width:220px;font-size:11px">Does a pre-approved template cover this?</div>
+        <div style="display:flex;gap:10px;margin-top:10px">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+            <div style="font-size:10px;color:#375623;font-weight:bold">YES</div>
+            <div class="box action" style="width:100px;font-size:10px;padding:8px"><strong>Select Template</strong>Fill brackets + send</div>
+            <div class="template-tag">T-01 through T-12</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+            <div style="font-size:10px;color:#7F6000;font-weight:bold">NO</div>
+            <div class="box action" style="width:100px;font-size:10px;padding:8px"><strong>Draft new reply</strong>Follow tone guide</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="branch">
+        <div class="branch-label int-label">INTERNAL Email</div>
+        <div class="v-b"></div>
+        <div class="box action" style="width:220px"><strong>Route to correct team member</strong>Use T-11 for escalations<br>Reply within 24 hours</div>
+        <div class="v-b"></div>
+        <div class="box decision" style="width:220px;font-size:11px">Does it require escalation to manager?</div>
+        <div style="display:flex;gap:10px;margin-top:10px">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+            <div style="font-size:10px;color:#C00000;font-weight:bold">YES</div>
+            <div class="box action" style="width:100px;font-size:10px;padding:8px"><strong>Use T-11</strong>Escalation Hand-Off</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+            <div style="font-size:10px;color:#375623;font-weight:bold">NO</div>
+            <div class="box action" style="width:100px;font-size:10px;padding:8px"><strong>Handle & close</strong>Log resolution</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:20px"></div>
+    <div class="h-bar"></div>
+    <div class="arrow" style="margin-top:2px"></div>
+    <div style="height:10px"></div>
+    <div class="box action" style="width:400px"><strong>📋 Log in Airtable Email Log (CRM)</strong>Thread ID · Template Used · Response Time · Resolution Status · Escalation Flag</div>
+    <div class="arrow"></div>
+    <div style="height:10px"></div>
+    <div class="box end-green">✅ Email Resolved — Label Updated to "Resolved"</div>
+  </div>
+</div>
+</body></html>
