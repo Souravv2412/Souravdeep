@@ -1,0 +1,6 @@
+Profile_ID,Age,Annual_Income,Primary_Goal,Target_Amount,Time_Horizon_Years,Risk_Preference,Notes
+SYN-001,27,52000,First home,25000,3,Moderate,Synthetic training profile
+SYN-002,34,76000,Retirement,0,25,Growth,Synthetic training profile
+SYN-003,42,64000,Emergency fund,12000,1,Conservative,Synthetic training profile
+SYN-004,29,48000,Short-term purchase,9000,2,Moderate,Synthetic training profile
+SYN-005,55,92000,General wealth building,0,10,Conservative,Synthetic training profile

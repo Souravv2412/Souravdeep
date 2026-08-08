@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Financial Needs Assessment Tool | Souravdeep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Retail Banking &middot; Client Needs Assessment</div>
+  <h1>Customer Financial Needs Assessment Tool</h1>
+  <p>Use a hypothetical profile to generate structured conversation prompts about goals, time horizon, liquidity, and account categories. The tool demonstrates needs-discovery logic and documentation, not personalized advice or account approval.</p>
+  <div class="source-badge">Educational portfolio simulation &middot; 2026 CRA reference figures &middot; Synthetic profiles only</div>
+  <div class="project-actions">
+    <a href="excel/Customer_Financial_Needs_Assessment.xlsx">Download Excel Workbook</a>
+    <a href="dataset/sample_customer_profiles.csv">Download Sample Profiles</a>
+    <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/first-home-savings-account.html" target="_blank" rel="noreferrer">Verify Current CRA Rules</a>
+  </div>
+</header>
+
+<main>
+  <div class="layout">
+    <div class="panel">
+      <h2>Client Profile</h2>
+      <p class="hint">Fill this in the way you would during an intake conversation</p>
+
+      <label for="age">Age</label>
+      <input type="number" id="age" min="16" max="100" value="27" />
+
+      <label for="income">Annual Income ($, before tax)</label>
+      <input type="number" id="income" min="0" step="1000" value="52000" />
+
+      <label for="goal">Primary Savings Goal</label>
+      <select id="goal">
+        <option value="home">Buying a first home</option>
+        <option value="retirement">Retirement</option>
+        <option value="emergency">Emergency fund / safety net</option>
+        <option value="shortterm">Short-term goal (car, wedding, vacation)</option>
+        <option value="wealth">General wealth building</option>
+      </select>
+
+      <label for="target">Target Amount ($, optional)</label>
+      <input type="number" id="target" min="0" step="500" placeholder="e.g. 25000" />
+      <div class="field-hint">Leave blank if the client isn't sure yet</div>
+
+      <label for="years">Time Horizon (years, optional)</label>
+      <input type="number" id="years" min="0" step="0.5" placeholder="e.g. 3" />
+
+      <label>Risk Tolerance</label>
+      <div class="risk-group" id="riskGroup">
+        <div class="risk-btn" data-risk="conservative">Conservative</div>
+        <div class="risk-btn active" data-risk="moderate">Moderate</div>
+        <div class="risk-btn" data-risk="aggressive">Aggressive</div>
+      </div>
+
+      <button class="submit" id="calcBtn">Generate Conversation Guide</button>
+    </div>
+
+    <div class="results" id="results">
+      <div class="empty-state">Fill in the hypothetical profile and generate a conversation guide.</div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Contribution limits shown are the 2026 CRA figures: TFSA $7,000/year ($109,000 cumulative for someone 18+ since 2009), RRSP 18% of prior-year earned income up to $33,810, FHSA $8,000/year up to $40,000 lifetime for first-time home buyers.
+  This tool illustrates structured needs-discovery and account-category discussion prompts. It does not constitute financial, investment, tax, or legal advice and does not know a client's actual CRA contribution room, debts, eligibility, or full financial picture.
+  Built by Souravdeep Singh as a portfolio simulation. Always verify current rules and client records before any action.
+</footer>
+
+
+
+  <script src="js/app.js"></script>
+</body>
+</html>
+

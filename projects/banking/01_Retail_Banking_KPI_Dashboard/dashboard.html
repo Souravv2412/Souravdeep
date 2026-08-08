@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retail Banking KPI Dashboard | Souravdeep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Retail Banking &middot; Advisor Book Performance</div>
+  <h1>Retail Banking KPI Dashboard</h1>
+  <p>Term deposit campaign performance across 41,188 customer contacts at a retail bank. These are the numbers an advisor's book of business is measured on: who to prioritize this week, which channel gets a callback, and whether a client who said no last time is worth a second conversation.</p>
+  <div class="source-badge">Source: UCI Bank Marketing dataset (Moro, Rita &amp; Cortez, 2014) &middot; 41,188 records &middot; CC BY 4.0</div>
+  <div class="project-actions">
+    <a href="excel/Retail_Banking_KPI_Dashboard.xlsx">Download Excel Dashboard</a>
+    <a href="dataset/bank-additional-full.csv">Download Source Dataset</a>
+    <a href="https://archive.ics.uci.edu/dataset/222/bank+marketing" target="_blank" rel="noreferrer">View UCI Source</a>
+  </div>
+</header>
+
+<main>
+  <div class="kpi-row" id="kpiRow"></div>
+
+  <div class="grid">
+    <div class="panel">
+      <h2>Conversion Rate by Month</h2>
+      <p class="hint">New accounts opened as a share of contacts made</p>
+      <div class="chart-wrap"><canvas id="chartMonth"></canvas></div>
+    </div>
+    <div class="panel">
+      <h2>Contacts vs New Accounts Opened</h2>
+      <p class="hint">Campaign volume against conversions, by month</p>
+      <div class="chart-wrap"><canvas id="chartVolume"></canvas></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="panel">
+      <h2>Conversion Rate by Customer Segment</h2>
+      <p class="hint">Occupation-based segmentation</p>
+      <div class="chart-wrap" style="height:300px;"><canvas id="chartSegment"></canvas></div>
+    </div>
+    <div class="panel">
+      <h2>Conversion Rate by Prior Campaign Outcome</h2>
+      <p class="hint">Re-engagement value of a past successful contact</p>
+      <div class="chart-wrap"><canvas id="chartPrior"></canvas></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="panel">
+      <h2>Contact Channel Performance</h2>
+      <p class="hint">Cellular vs. landline outreach</p>
+      <table id="tblChannel"></table>
+    </div>
+    <div class="panel">
+      <h2>Loan Product Penetration</h2>
+      <p class="hint">Existing product holders and their conversion on the new offer</p>
+      <table id="tblLoan"></table>
+    </div>
+  </div>
+
+  <div class="panel full">
+    <h2>Customer Age Band Performance</h2>
+    <p class="hint">Where the highest-converting customers sit by age</p>
+    <table id="tblAge"></table>
+  </div>
+</main>
+
+<footer>
+  Data: UCI Machine Learning Repository, Bank Marketing dataset (Moro, S., Rita, P., &amp; Cortez, P., 2014), licensed CC BY 4.0. Figures are aggregated directly from the 41,188-row source file; no values are simulated.
+  Built by Souravdeep Singh as a public-dataset portfolio project to demonstrate retail banking KPI reporting, campaign analysis, and dashboard design. This project is not banking employment.
+</footer>
+
+
+
+  <script src="js/app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A formula-driven personal finance dashboard portfolio project using synthetic data.">
+  <title>Personal Financial Dashboard | Souravdeep Singh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Client Service · Financial Review Preparation</div>
+        <h1>Personal Financial Dashboard</h1>
+        <p class="lead">A formula-driven Excel review of cash flow, budget variance, savings rate, and net worth using clearly labeled synthetic data.</p>
+        <div class="badge">Portfolio simulation · No real client information</div>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="excel/Personal_Financial_Dashboard.xlsx">Download Excel Workbook</a>
+        <a class="button secondary" href="dataset/personal_finance_transactions.csv">Download Sample Dataset</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="kpi-grid" aria-label="Key financial indicators">
+      <article class="kpi"><span>Total Income</span><strong>$21,419</strong><small>Six-month sample</small></article>
+      <article class="kpi"><span>Total Expenses</span><strong>$15,694</strong><small>Six-month sample</small></article>
+      <article class="kpi"><span>Net Savings</span><strong>$5,725</strong><small>Income less expenses</small></article>
+      <article class="kpi"><span>Average Savings Rate</span><strong>26.6%</strong><small>Across six months</small></article>
+      <article class="kpi accent"><span>Current Net Worth</span><strong>$7,020</strong><small>Sample ending balance</small></article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel chart-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="overline">Cash-flow trend</p>
+            <h2>Income, expenses, and monthly savings</h2>
+          </div>
+          <span class="formula-chip">Linked Excel formulas</span>
+        </div>
+        <div class="chart-wrap"><canvas id="cashflowChart"></canvas></div>
+      </article>
+
+      <article class="panel">
+        <p class="overline">Review summary</p>
+        <h2>What the workbook helps surface</h2>
+        <div class="insight">
+          <span>01</span><div><strong>Budget control</strong><p>Average monthly expenses were $2,616 against a $2,690 budget, a favourable $74 variance.</p></div>
+        </div>
+        <div class="insight">
+          <span>02</span><div><strong>Consistency</strong><p>The sample remained cash-flow positive in every displayed month.</p></div>
+        </div>
+        <div class="insight">
+          <span>03</span><div><strong>Structured follow-up</strong><p>Transactions, budget categories, monthly results, and net worth are separated for easier review and documentation.</p></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel workbook-section">
+      <div>
+        <p class="overline">Workbook architecture</p>
+        <h2>Built for an organized financial conversation</h2>
+        <p>The Excel file connects transaction-level entries to budget variance, monthly cash flow, savings-rate tracking, and a net-worth view. It demonstrates how structured preparation can make a client or administrative review clearer and more consistent.</p>
+      </div>
+      <div class="sheet-grid">
+        <span>Dashboard</span><span>Transactions</span><span>Budget vs Actual</span><span>Net Worth Tracker</span><span>Monthly Summary</span><span>Read Me</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    All figures and transactions are synthetic and created for demonstration. This project is not personal financial, investment, tax, or legal advice. Built by Souravdeep Singh as a portfolio project.
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

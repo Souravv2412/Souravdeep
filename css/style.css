@@ -244,3 +244,20 @@ img { max-width:100%; display:block; }
 @media(max-width:768px){ .lb-prev{left:-44px;} .lb-next{right:-44px;} .lb-nav{width:36px;height:36px;font-size:24px;} }
 /* make all content images show pointer cursor */
 .photo-grid img, .inv-body img, .section img:not(.nav-logo):not(.hero-photo img) { cursor:zoom-in; }
+
+/* BANKING AND CLIENT-SERVICE PROJECTS */
+.banking-projects-section { background:linear-gradient(180deg,#F8FBFF 0%,#EEF4FA 100%); max-width:none; padding-left:max(32px,calc((100% - 1200px)/2)); padding-right:max(32px,calc((100% - 1200px)/2)); }
+.banking-card { position:relative; overflow:hidden; background-position:center; background-size:cover; }
+.banking-card .card-overlay { position:relative; }
+@media(max-width:640px){ .banking-projects-section { padding-left:20px; padding-right:20px; } }
+
+/* EDUCATION-BACKED SKILL FOUNDATIONS */
+.academic-foundation { background:linear-gradient(180deg,#F8FBFF,#EEF4FA); max-width:none; padding-left:max(32px,calc((100% - 1200px)/2)); padding-right:max(32px,calc((100% - 1200px)/2)); }
+.academic-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+.academic-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow); }
+.academic-card i { color:var(--blue); font-size:24px; margin-bottom:14px; }
+.academic-card h3 { font-size:15px; line-height:1.3; margin-bottom:10px; color:var(--dark); }
+.academic-card p { font-size:13px; line-height:1.7; color:var(--muted); margin:0; }
+.academic-note { margin-top:22px; background:#fff; border-left:4px solid var(--gold); padding:14px 18px; border-radius:8px; color:var(--muted); font-size:13px; }
+@media(max-width:900px){ .academic-grid { grid-template-columns:1fr 1fr; } }
+@media(max-width:640px){ .academic-foundation { padding-left:20px; padding-right:20px; } .academic-grid { grid-template-columns:1fr; } }
